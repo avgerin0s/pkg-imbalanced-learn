@@ -1,0 +1,6 @@
+imbalanced-learn (0.3.2-1) unstable; urgency=medium
+
+  * Initial release (Closes: #893055)
+  * d/patches: Fix build to build only for Python3
+
+ -- Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>  Wed, 14 Feb 2018 16:08:01 +0200
