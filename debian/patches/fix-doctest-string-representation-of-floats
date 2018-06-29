@@ -1,0 +1,105 @@
+Author: Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>
+Description: Fix comparison of string represented floats in tests
+Last-Update: 2018-06-29
+
+--- a/imblearn/metrics/classification.py
++++ b/imblearn/metrics/classification.py
+@@ -135,11 +135,11 @@
+     >>> from imblearn.metrics import sensitivity_specificity_support
+     >>> y_true = np.array(['cat', 'dog', 'pig', 'cat', 'dog', 'pig'])
+     >>> y_pred = np.array(['cat', 'pig', 'dog', 'cat', 'cat', 'dog'])
+-    >>> sensitivity_specificity_support(y_true, y_pred, average='macro')
++    >>> sensitivity_specificity_support(y_true, y_pred, average='macro') # doctest: +FLOAT_CMP
+     (0.33333333333333331, 0.66666666666666663, None)
+-    >>> sensitivity_specificity_support(y_true, y_pred, average='micro')
++    >>> sensitivity_specificity_support(y_true, y_pred, average='micro') # doctest: +FLOAT_CMP
+     (0.33333333333333331, 0.66666666666666663, None)
+-    >>> sensitivity_specificity_support(y_true, y_pred, average='weighted')
++    >>> sensitivity_specificity_support(y_true, y_pred, average='weighted') # doctest: +FLOAT_CMP
+     (0.33333333333333331, 0.66666666666666663, None)
+ 
+     """
+@@ -339,13 +339,13 @@
+     >>> from imblearn.metrics import sensitivity_score
+     >>> y_true = [0, 1, 2, 0, 1, 2]
+     >>> y_pred = [0, 2, 1, 0, 0, 1]
+-    >>> sensitivity_score(y_true, y_pred, average='macro')
++    >>> sensitivity_score(y_true, y_pred, average='macro') # doctest: +FLOAT_CMP
+     0.33333333333333331
+-    >>> sensitivity_score(y_true, y_pred, average='micro')
++    >>> sensitivity_score(y_true, y_pred, average='micro') # doctest: +FLOAT_CMP
+     0.33333333333333331
+-    >>> sensitivity_score(y_true, y_pred, average='weighted')
++    >>> sensitivity_score(y_true, y_pred, average='weighted') # doctest: +FLOAT_CMP
+     0.33333333333333331
+-    >>> sensitivity_score(y_true, y_pred, average=None)
++    >>> sensitivity_score(y_true, y_pred, average=None) # doctest: +FLOAT_CMP
+     array([ 1.,  0.,  0.])
+ 
+     """
+@@ -438,13 +438,13 @@
+     >>> from imblearn.metrics import specificity_score
+     >>> y_true = [0, 1, 2, 0, 1, 2]
+     >>> y_pred = [0, 2, 1, 0, 0, 1]
+-    >>> specificity_score(y_true, y_pred, average='macro')
++    >>> specificity_score(y_true, y_pred, average='macro') # doctest: +FLOAT_CMP
+     0.66666666666666663
+-    >>> specificity_score(y_true, y_pred, average='micro')
++    >>> specificity_score(y_true, y_pred, average='micro') # doctest: +FLOAT_CMP
+     0.66666666666666663
+-    >>> specificity_score(y_true, y_pred, average='weighted')
++    >>> specificity_score(y_true, y_pred, average='weighted') # doctest: +FLOAT_CMP
+     0.66666666666666663
+-    >>> specificity_score(y_true, y_pred, average=None)
++    >>> specificity_score(y_true, y_pred, average=None) # doctest: +FLOAT_CMP
+     array([ 0.75,  0.5 ,  0.75])
+ 
+     """
+@@ -559,17 +559,17 @@
+     >>> from imblearn.metrics import geometric_mean_score
+     >>> y_true = [0, 1, 2, 0, 1, 2]
+     >>> y_pred = [0, 2, 1, 0, 0, 1]
+-    >>> geometric_mean_score(y_true, y_pred)
++    >>> geometric_mean_score(y_true, y_pred) # doctest: +FLOAT_CMP
+     0.0
+-    >>> geometric_mean_score(y_true, y_pred, correction=0.001)
++    >>> geometric_mean_score(y_true, y_pred, correction=0.001) # doctest: +FLOAT_CMP
+     0.010000000000000004
+-    >>> geometric_mean_score(y_true, y_pred, average='macro')
++    >>> geometric_mean_score(y_true, y_pred, average='macro') # doctest: +FLOAT_CMP
+     0.47140452079103168
+-    >>> geometric_mean_score(y_true, y_pred, average='micro')
++    >>> geometric_mean_score(y_true, y_pred, average='micro') # doctest: +FLOAT_CMP
+     0.47140452079103168
+-    >>> geometric_mean_score(y_true, y_pred, average='weighted')
++    >>> geometric_mean_score(y_true, y_pred, average='weighted') # doctest: +FLOAT_CMP
+     0.47140452079103168
+-    >>> geometric_mean_score(y_true, y_pred, average=None)
++    >>> geometric_mean_score(y_true, y_pred, average=None) # doctest: +FLOAT_CMP
+     array([ 0.8660254,  0.       ,  0.       ])
+ 
+     """
+@@ -672,11 +672,11 @@
+     --------
+     >>> from imblearn.metrics import geometric_mean_score as gmean
+     >>> from imblearn.metrics import make_index_balanced_accuracy as iba
+-    >>> gmean = iba(alpha=0.1, squared=True)(gmean)
++    >>> gmean = iba(alpha=0.1, squared=True)(gmean) # doctest: +FLOAT_CMP
+     >>> y_true = [1, 0, 0, 1, 0, 1]
+     >>> y_pred = [0, 0, 1, 1, 0, 1]
+-    >>> print(gmean(y_true, y_pred, average=None))
+-    [ 0.44444444  0.44444444]
++    >>> print(gmean(y_true, y_pred, average=None)) # doctest: +FLOAT_CMP
++    [0.44444444  0.44444444]
+ 
+     """
+ 
+@@ -794,7 +794,7 @@
+     >>> target_names = ['class 0', 'class 1', \
+     'class 2'] # doctest : +NORMALIZE_WHITESPACE
+     >>> print(classification_report_imbalanced(y_true, y_pred, \
+-    target_names=target_names))
++    target_names=target_names)) # doctest: +FLOAT_CMP
+                        pre       rec       spe        f1       geo       iba\
+        sup
+     <BLANKLINE>
