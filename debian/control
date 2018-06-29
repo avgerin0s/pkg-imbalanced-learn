@@ -14,6 +14,7 @@ Build-Depends: debhelper (>= 11),
                python3-pytest,
                python3-nose,
                python3-matplotlib (>= 2.0.0),
+               python3-pytest-doctestplus,
 Standards-Version: 4.1.3
 Homepage: https://github.com/scikit-learn-contrib/imbalanced-learn
 Vcs-Git: https://github.skroutz.gr/sys/pkg-imbalanced-learn
