@@ -18,8 +18,8 @@ Build-Depends: debhelper (>= 11),
                python3-pytest-doctestplus,
 Standards-Version: 4.1.3
 Homepage: https://github.com/scikit-learn-contrib/imbalanced-learn
-Vcs-Git: https://github.skroutz.gr/sys/pkg-imbalanced-learn
-Vcs-Browser: https://github.skroutz.gr/sys/pkg-imbalanced-learn
+Vcs-Git: https://github.com/eavgerinos/pkg-imbalanced-learn
+Vcs-Browser: https://github.com/eavgerinos/pkg-imbalanced-learn
 
 Package: python3-imblearn
 Architecture: all
