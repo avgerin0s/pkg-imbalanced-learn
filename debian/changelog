@@ -2,5 +2,6 @@ imbalanced-learn (0.3.3-1) unstable; urgency=medium
 
   * Initial release (Closes: #893055)
   * d/patches: Fix build to build only for Python3
+  * d/patches: Fix float string representation in tests
 
- -- Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>  Wed, 14 Feb 2018 16:08:01 +0200
+ -- Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>  Fri, 13 Jul 2018 15:45:18 +0300
