@@ -1,7 +1,8 @@
 Source: imbalanced-learn
 Section: python
 Priority: optional
-Maintainer: Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>
+Maintainer: NeuroDebian Team <team@neuro.debian.net>
+Uploaders: Aggelos Avgerinos <evaggelos.avgerinos@gmail.com>
 Build-Depends: debhelper (>= 11),
                dh-python,
                python3,
